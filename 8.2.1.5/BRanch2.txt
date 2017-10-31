@@ -1,0 +1,201 @@
+           San Jose, California 95134-1706
+
+Cisco IOS Software, C1900 Software (C1900-UNIVERSALK9-M), Version 15.1(4)M4, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2012 by Cisco Systems, Inc.
+Compiled Thurs 5-Jan-12 15:41 by pt_team
+Image text-base: 0x2100F918, data-base: 0x24729040
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Cisco CISCO1941/K9 (revision 1.0) with 491520K/32768K bytes of memory.
+Processor board ID FTX152400KS
+2 Gigabit Ethernet interfaces
+DRAM configuration is 64 bits wide with parity disabled.
+255K bytes of non-volatile configuration memory.
+249856K bytes of ATA System CompactFlash 0 (Read/Write)
+
+
+         --- System Configuration Dialog ---
+
+Would you like to enter the initial configuration dialog? [yes/no]: System Bootstrap, Version 15.1(4)M4, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 2010 by cisco Systems, Inc.
+Total memory size = 512 MB - On-board = 512 MB, DIMM0 = 0 MB
+CISCO1941/K9 platform with 524288 Kbytes of main memory
+Main memory is configured to 64/-1(On-board/DIMM0) bit mode with ECC disabled
+
+Readonly ROMMON initialized
+
+program load complete, entry point: 0x80803000, size: 0x1b340
+program load complete, entry point: 0x80803000, size: 0x1b340
+
+IOS Image Load Test
+___________________
+Digitally Signed Release Software
+program load complete, entry point: 0x81000000, size: 0x2bb1c58
+Self decompressing the image :
+########################################################################## [OK]
+Smart Init is enabled
+smart init is sizing iomem
+                  TYPE      MEMORY_REQ
+           HWIC Slot 0      0x00200000     Onboard devices &
+          buffer pools      0x01E8F000
+-----------------------------------------------
+                TOTAL:      0x0268F000
+Rounded IOMEM up to: 40Mb.
+Using 6 percent iomem. [40Mb/512Mb]
+
+              Restricted Rights Legend
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+Cisco IOS Software, C1900 Software (C1900-UNIVERSALK9-M), Version 15.1(4)M4, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2012 by Cisco Systems, Inc.
+Compiled Thurs 5-Jan-12 15:41 by pt_team
+Image text-base: 0x2100F918, data-base: 0x24729040
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Cisco CISCO1941/K9 (revision 1.0) with 491520K/32768K bytes of memory.
+Processor board ID FTX152400KS
+2 Gigabit Ethernet interfaces
+2 Low-speed serial(sync/async) network interface(s)
+DRAM configuration is 64 bits wide with parity disabled.
+255K bytes of non-volatile configuration memory.
+249856K bytes of ATA System CompactFlash 0 (Read/Write)
+
+
+         --- System Configuration Dialog ---
+
+Would you like to enter the initial configuration dialog? [yes/no]: n
+
+
+Press RETURN to get started!
+
+
+
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname BR2
+BR2(config)#int g0/0
+BR2(config-if)#ip address 172.16.252.1 255.255.254.0
+BR2(config-if)#description LAN0
+BR2(config-if)#no shutdown
+
+BR2(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+int g0/1
+BR2(config-if)#ip address 172.16.248.1 255.255.252.0
+BR2(config-if)#description LAN1
+BR2(config-if)#no shutdown
+
+BR2(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+BR2(config-if)#int s0/0/1
+BR2(config-if)#ip address 172.16.254.6 255.255.255.252
+BR2(config-if)#description HQ
+BR2(config-if)#do show controllers s0/0/1
+Interface Serial0/0/1
+Hardware is PowerQUICC MPC860
+DTE V.35 TX and RX clocks detected
+idb at 0x81081AC4, driver data structure at 0x81084AC0
+SCC Registers:
+General [GSMR]=0x2:0x00000000, Protocol-specific [PSMR]=0x8
+Events [SCCE]=0x0000, Mask [SCCM]=0x0000, Status [SCCS]=0x00
+Transmit on Demand [TODR]=0x0, Data Sync [DSR]=0x7E7E
+Interrupt Registers:
+Config [CICR]=0x00367F80, Pending [CIPR]=0x0000C000
+Mask   [CIMR]=0x00200000, In-srv  [CISR]=0x00000000
+Command register [CR]=0x580
+Port A [PADIR]=0x1030, [PAPAR]=0xFFFF
+       [PAODR]=0x0010, [PADAT]=0xCBFF
+Port B [PBDIR]=0x09C0F, [PBPAR]=0x0800E
+       [PBODR]=0x00000, [PBDAT]=0x3FFFD
+Port C [PCDIR]=0x00C, [PCPAR]=0x200
+       [PCSO]=0xC20,  [PCDAT]=0xDF2, [PCINT]=0x00F
+Receive Ring
+        rmd(68012830): status 9000 length 60C address 3B6DAC4
+        rmd(68012838): status B000 length 60C address 3B6D444
+Transmit Ring
+
+BR2(config-if)#no shutdown
+
+BR2(config-if)#
+%LINK-5-CHANGED: Interface Serial0/0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state to up
+
+BR2(config-if)#int s0/0/0
+BR2(config-if)#ip address 172.16.254.10 255.255.255.252
+BR2(config-if)#description BR1
+BR2(config-if)#do show controllers s0/0/0
+Interface Serial0/0/0
+Hardware is PowerQUICC MPC860
+DCE V.35, clock rate 2000000
+idb at 0x81081AC4, driver data structure at 0x81084AC0
+SCC Registers:
+General [GSMR]=0x2:0x00000000, Protocol-specific [PSMR]=0x8
+Events [SCCE]=0x0000, Mask [SCCM]=0x0000, Status [SCCS]=0x00
+Transmit on Demand [TODR]=0x0, Data Sync [DSR]=0x7E7E
+Interrupt Registers:
+Config [CICR]=0x00367F80, Pending [CIPR]=0x0000C000
+Mask   [CIMR]=0x00200000, In-srv  [CISR]=0x00000000
+Command register [CR]=0x580
+Port A [PADIR]=0x1030, [PAPAR]=0xFFFF
+       [PAODR]=0x0010, [PADAT]=0xCBFF
+Port B [PBDIR]=0x09C0F, [PBPAR]=0x0800E
+       [PBODR]=0x00000, [PBDAT]=0x3FFFD
+Port C [PCDIR]=0x00C, [PCPAR]=0x200
+       [PCSO]=0xC20,  [PCDAT]=0xDF2, [PCINT]=0x00F
+Receive Ring
+        rmd(68012830): status 9000 length 60C address 3B6DAC4
+        rmd(68012838): status B000 length 60C address 3B6D444
+Transmit Ring
+
+BR2(config-if)#clock rate 128000
+BR2(config-if)#no shutdown
+
+BR2(config-if)#
+%LINK-5-CHANGED: Interface Serial0/0/0, changed state to up
+
+BR2(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/0, changed state to up
+
+BR2(config-if)#

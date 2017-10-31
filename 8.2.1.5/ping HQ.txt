@@ -1,0 +1,13 @@
+HQ>ping 172.16.254.2
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 172.16.254.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/3/10 ms
+
+HQ>ping 172.16.254.6
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 172.16.254.6, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/4/15 ms
